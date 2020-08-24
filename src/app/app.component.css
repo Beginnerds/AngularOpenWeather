@@ -1,0 +1,11 @@
+.placeholder-item:hover{
+    filter: brightness(50%);
+    cursor: pointer;
+}
+
+.editing-item{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

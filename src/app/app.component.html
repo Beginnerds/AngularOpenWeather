@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row d-flex justify-content-center">
+    <div *ngFor="let item of panelItems; index as i;" [ngClass]="{'editing-item': item.editing}" class="col-md-4 col-lg-3 p-0 mt-5 mx-2 border rounded shadow" style="height: 400px;">
+      <div *ngIf="item.isModified && !item.editing" class="card" style="height: 100%;">
+        <img [src]="setImage(i)" alt="">
+        <div class="card-body">
+          <h3 class="card-title mx-auto text-center">{{item.cityName}}</h3>
+          <p class="card-txt text-center"><span class="text-danger">Temp: </span>{{item.temp}}°C</p>
+          <p class="card-txt text-center"><span class="text-danger">Humidity: </span>{{item.humidity}}%</p>
+          <p class="card-txt text-center"><span class="text-danger">Weather: </span>{{item.weather}}</p>
+          <div class="text-center">
+            <button (click)="item.editing=true" class="btn btn-primary px-3">Edit</button>
+          </div>
+        </div>
+      </div>
+
+      <div *ngIf="!item.isModified && !item.editing" (click)="item.editing=true" class="placeholder-item d-flex justify-content-center align-items-center" style="height: 100%;">
+        <p class="text-primary">Add a city</p>
+      </div>
+
+      <form *ngIf="item.editing" class="form-inline">
+        <input class="form-control mx-auto" type="text" name="city" placeholder="Enter city name" [(ngModel)]="item.cityName">
+        <button (click)="submitData(i)" type="button" class="btn btn-primary mx-auto">Submit</button>
+      </form>
+      <p *ngIf="item.hasError" class="text-danger">{{errorMessage}}</p>
+    </div>
+  </div>
+</div>
