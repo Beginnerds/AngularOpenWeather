@@ -11,7 +11,7 @@ export class DataFetchingService{
 
 
     private constructUrl(city:string){
-        return `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=ae1d0b10b9648a065e8b0a1f92c1fa16&lang=en`;
+        return `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=ae1d0b10b9648a065e8b0a1f92c1fa16&lang=en`;
     }
 
     getCityData(city:string){
