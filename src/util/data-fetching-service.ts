@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
-import { map, catchError } from 'rxjs/operators';
-import { from, of, throwError } from 'rxjs';
+import { catchError } from 'rxjs/operators';
+import { of, throwError } from 'rxjs';
 import { Injectable } from '@angular/core';
 
 @Injectable({

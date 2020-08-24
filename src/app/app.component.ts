@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { DataFetchingService } from 'src/util/data-fetching-service';
+import { DataFetchingService } from '../../src/util/data-fetching-service';
 
 @Component({
   selector: 'app-root',
