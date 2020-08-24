@@ -91,7 +91,7 @@ export class AppComponent {
       return "assets/images/Clear.jpg";
     }
     else{
-      return `assets/images/${weathers[imgIndex]}.jpg`;
+      return `./assets/images/${weathers[imgIndex]}.jpg`;
     }
   }
 
